@@ -1,18 +1,10 @@
-const Sellerdb = require("../../../Model/SellerDb")
+const SaveSellerDetails = require("../../../Services/SellerServices/AccountServcics/Account1")
 
-async function HandleSellerSignup(req,res)
+function HandleSellerSignup(req,res)
 {
     const {Firstname, Lastname,Location} = req.body
     console.log(Firstname,Lastname,Location)
-    try{
-        const sellerdatabase = new Sellerdb({
-            Firstname,Lastname,Location
-        })
-        await sellerdatabase.save()
-        console.log("It has been saved successfully")
-    }catch(err){
-        console.log(err)
-    }
+    SaveSellerDetails({Firstname, Lastname,Location})
 }
     
 module.exports = HandleSellerSignup

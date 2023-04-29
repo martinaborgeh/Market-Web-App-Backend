@@ -1,11 +1,10 @@
 const mongoose = require("mongoose")
-
 const Farmerdb = new mongoose.Schema({
     Firstname:{
         type:String,
         required:true
     },
-    LastName:{
+    Lastname:{
         type:String,
         required:true
 
@@ -17,4 +16,6 @@ const Farmerdb = new mongoose.Schema({
 
 })
 
-export default mongoose.models['Farmerdb']||mongoose.model('Farmerdb',Farmerdb)
+
+
+module.exports=mongoose.models['Farmerdb']||mongoose.model('Farmerdb',Farmerdb)

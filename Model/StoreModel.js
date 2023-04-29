@@ -1,12 +1,11 @@
-const mongoose = require("mongoose")
 
-
-const Sellerdb = new mongoose.Schema({
+mongoose = require('mongoose')
+const Storedb = new mongoose.Schema({
     Firstname:{
         type:String,
         required:true
     },
-    Lastname:{
+    LastName:{
         type:String,
         required:true
 
@@ -18,4 +17,4 @@ const Sellerdb = new mongoose.Schema({
 
 })
 
-module.exports = mongoose.models['Sellerdb']||mongoose.model('Sellerdb',Sellerdb)
+module.exports = mongoose.models['Storedb']||mongoose.model('Storedb',Storedb)

@@ -1,6 +1,7 @@
 const DbConnect = require("./Database")
 const dotenv = require('dotenv')
-const routing = require("./Rounting/Seller_Rounting/Account_Routing/Account")
+const sellerrouter = require("./Rounting/Seller_Rounting/Account_Routing/Account")
+const farmerrouter = require("./Rounting/Farmer_Routing/Account_Rounting/Account")
 const express = require("express")
 const  cors = require("cors")
 dotenv.config()
@@ -11,7 +12,8 @@ const app = express()
 app.use(cors())
 app.use(express.urlencoded({extended:true}))
 app.use(express.json())
-app.use('/',routing)
+app.use('/',sellerrouter)
+app.use('/',farmerrouter)
 app.listen(Port,()=>{
     DbConnect()
     
